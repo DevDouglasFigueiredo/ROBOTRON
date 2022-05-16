@@ -37,6 +37,18 @@ main {
     position: relative;
 }
 
+.alterar {
+    margin: 2px;
+    width: 200px;
+}
+
+.botoes {
+   position: relative;
+   right: 5%;
+   bottom: 10%;
+   display: flex;
+}
+
 .robo {
     height: 110%;
     z-index: 1;
@@ -223,11 +235,13 @@ main {
 @media screen and (max-width: 1200px) {
     body { 
         font-size: 13px;
+        
     }
 
     main {
         width: 96vw;
         height: 80vh;
         margin: 10vh auto;
+        
     }
 }
