@@ -14,19 +14,19 @@ const pecas = {
         "energia": 0,
         "velocidade": -20
     },
-    "nucleos":{
+    "nucleos": {
         "forca": 0,
         "poder": 7,
         "energia": 48,
         "velocidade": -24
     },
-    "pernas":{
+    "pernas": {
         "forca": 27,
         "poder": 21,
         "energia": -32,
         "velocidade": 42
     },
-    "foguetes":{
+    "foguetes": {
         "forca": 0,
         "poder": 28,
         "energia": 0,
@@ -34,36 +34,64 @@ const pecas = {
     }
 }
 
-controle.forEach( (elemento) => {
-    elemento.addEventListener('click' , (evento) => {
+controle.forEach((elemento) => {
+    elemento.addEventListener('click', (evento) => {
         manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
         atualizaEstatisticas(evento.target.dataset.peca);
     })
 })
 
 
-function manipulaDados (operacao, controle){
+function manipulaDados(operacao, controle) {
 
     const peca = controle.querySelector('[data-contador]');
-    
-    if(operacao === '-'){
-        peca.value = parseInt(peca.value) -1
+
+    if (operacao === '-') {
+        peca.value = parseInt(peca.value) - 1
     } else {
-        peca.value = parseInt(peca.value) +1
+        peca.value = parseInt(peca.value) + 1
     }
 }
 
-function atualizaEstatisticas (peca){
+function atualizaEstatisticas(peca) {
 
-    estatisticas.forEach ( (elemento) => {
+    estatisticas.forEach((elemento) => {
         elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
     })
 }
 
-   function trocaImagem(){
-     const robo = document.querySelector('.robo');
-           robo.src='img/Robotron-Amarelo.png';
-     }
+const roboColor = [{
+    id: 0,
+    color: 'img/Robotron-Amarelo.png'
+}, {
+    id: 1,
+    color: 'img/Robotron-Preto.png'
+}, {
+    id: 2,
+    color: 'img/Robotron-Rosa.png'
+}, {
+    id: 3,
+    color: 'img/Robotron-Vermelho.png'
+}, {
+    id: 4,
+    color: 'img/Robotron- Branco.png'
+}, {
+    id: 5,
+    color: 'img/robotron.png'
+},]
+
+let indexRoboImage = 0
+
+function trocaImagem() {
+    const robo = document.querySelector('.robo');
+    
+    if (indexRoboImage == 6) {
+        indexRoboImage = 0
+    }
+    robo.src = roboColor[indexRoboImage].color
+    indexRoboImage++
+
+}
 
 
 

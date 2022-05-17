@@ -37,6 +37,25 @@ main {
     position: relative;
 }
 
+.button{
+    position: relative;
+    top: 510px;
+    left: 350px;   
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.2em 1em;
+    border: 3px solid var(--main-branco);
+    background: var(--main-branco);
+    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
+    cursor: pointer;
+}
+
+.button:hover{
+    background: var(--main-preto);
+    color: var(--main-branco)
+}
+
 .alterar {
     margin: 2px;
     width: 200px;
