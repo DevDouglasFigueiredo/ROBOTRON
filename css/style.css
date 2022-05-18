@@ -39,16 +39,17 @@ main {
 
 .button{
     position: relative;
-    top: 510px;
+    top: 505px;
     left: 350px;   
-    font-size: 1.4rem;
+    font-size: 2em;
+    font-family: 'Teko', sans-serif;
     text-transform: uppercase;
-    font-weight: bold;
     padding: 0.2em 1em;
     border: 3px solid var(--main-branco);
     background: var(--main-branco);
     clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
     cursor: pointer;
+    z-index: 1000;
 }
 
 .button:hover{
